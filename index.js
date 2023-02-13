@@ -7,57 +7,40 @@ const button = document.querySelector('.btn');
 
 let books;
 
+const saveBooks = () => {
+  localStorage.setItem('books', JSON.stringify(books));
+};
+
 const savedBooks = JSON.parse(localStorage.getItem('books'));
-if (Array.isArray(savedBooks)){
-  books = savedBooks
-}else {
+if (Array.isArray(savedBooks)) {
+  books = savedBooks;
+} else {
   books = [];
 }
 
 const createBooks = (title, author) => {
-  const id = '' + new Date().getTime()
+  const id = `${new Date().getTime()}`;
   books.push({
-    title: title,
-    author: author,
-    id: id,
+    title,
+    author,
+    id,
   });
 
   saveBooks();
-}
+};
 
-const addBooks = () => {
-  const title = addTitle.value;
-  const author = addAuthor.value;
-
-  createBooks(title, author);
-  render();
-}
-
-const deleteBooks = idToDelete => {
+const deleteBooks = (idToDelete) => {
   books = books.filter((book) => {
-    if(book.id === idToDelete){
-      return false
-    }else {
-      return true
+    if (book.id === idToDelete) {
+      return false;
     }
+    return true;
   });
-  
+
   saveBooks();
-}
+};
 
-const removeBooks = (event) => {
-  const buttonDelete = event.target;
-  const idToDelete = buttonDelete.id;
-  
-  deleteBooks(idToDelete)
-  render()
-}
-
-const saveBooks = () => {
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
-window.onload = render = () => {
+const render = () => {
   holder.innerHTML = '';
 
   const list = document.createElement('ul');
@@ -70,10 +53,18 @@ window.onload = render = () => {
     const author = document.createElement('p');
     author.innerHTML = book.author;
 
+    const removeBooks = (event) => {
+      const buttonDelete = event.target;
+      const idToDelete = buttonDelete.id;
+
+      deleteBooks(idToDelete);
+      render();
+    };
+
     const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = 'remove'
+    deleteButton.innerHTML = 'remove';
     deleteButton.setAttribute('id', book.id);
-    deleteButton.onclick = removeBooks
+    deleteButton.onclick = removeBooks;
 
     const line = document.createElement('hr');
 
@@ -81,9 +72,17 @@ window.onload = render = () => {
     list.appendChild(listItem);
     holder.appendChild(list);
   });
-}
+};
 
-render();
+const addBooks = () => {
+  const title = addTitle.value;
+  const author = addAuthor.value;
+
+  createBooks(title, author);
+  render();
+};
+
+window.onload = render();
 
 bookContainer.appendChild(holder);
 
