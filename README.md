@@ -52,13 +52,13 @@ We use Linters for HTML/CSS to cheack this project.
 ## Authors
 
 👤 **Mostafa Shahat** 
-👤 ****
+👤 **Adeka Zeffs**
 
 - GitHub: [@MostafaShahat2021](https://github.com/MostafaShahat2021)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mostafa-shahat-a75810208/)
 
-- GitHub: []()
-- LinkedIn: [LinkedIn]()
+- GitHub: [zeff96](https://github.com/zeff96)
+- LinkedIn: [zeffo96](https://www.linkedin.com/in/zeff-adeka-28060820a/)
 
 ## 🤝 Contributing
 
