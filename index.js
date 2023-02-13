@@ -45,6 +45,14 @@ const deleteBooks = idToDelete => {
   saveBooks();
 }
 
+const removeBooks = (event) => {
+  const buttonDelete = event.target;
+  const idToDelete = buttonDelete.id;
+  
+  deleteBooks(idToDelete)
+  render()
+}
+
 const saveBooks = () => {
   localStorage.setItem('books', JSON.stringify(books));
 }
