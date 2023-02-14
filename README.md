@@ -40,6 +40,11 @@ Basic website that allows users to add/remove books from a list.
 - Local Storage.
 - Linters.
 
+## Key Features:
+- Add Form to save books .
+- use Local storage to save user data.
+- User can add books and can remoove it from the list.
+
 ### In this project we :
 - Add Linters for HTML/CSS.
 - Use best practices for HTML & CSS.
@@ -52,10 +57,15 @@ Basic website that allows users to add/remove books from a list.
 
 ## Getting Started
 
+### Setup
 1- clone Repo.
-git clone git@github.com:MostafaShahat2021/portfolio.git
-
+```sh
+    git clone git@github.com:zeff96/Awesome-Book.git
+```
+### Install 
 2- Install npm (node pakage manager)
+
+### Prerequisites:
 **you can run any one of these commands to install npm on your machine:**
 - npm i
 - npm install
@@ -80,15 +90,22 @@ We use Linters for HTML/CSS to cheack this project.
 - GitHub: [zeff96](https://github.com/zeff96)
 - LinkedIn: [zeffo96](https://www.linkedin.com/in/zeff-adeka-28060820a/)
 
+## Future Features:
+- Add navigations 
+- Make it responsive 
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/zeff96/Awesome-Book/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgements
+Acknowledgement microverse student for providing the platform.
 
 ## 📝 License
 
