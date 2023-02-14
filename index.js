@@ -18,6 +18,14 @@ if (Array.isArray(savedBooks)) {
   books = [];
 }
 
+class Book {
+  constructor(title, author, id = '' + new Date().getTime()){
+    this.title = title;
+    this.author = author;
+    this.id = id;
+  }
+}
+
 const createBooks = (title, author) => {
   const id = `${new Date().getTime()}`;
   books.push({
