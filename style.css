@@ -13,3 +13,29 @@ body {
   display: block;
   margin-bottom: 5px;
 }
+
+.book-container {
+  width: 50%;
+  text-align: center;
+}
+.div-container {
+  width: 100%;
+  border: 1px solid ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  color: #d6d2d2f5;
+  width: 100%;
+}
+
+.list-container{
+  padding-inline-start: 0;
+  width: 100%;
+}
+
+.list-container li:nth-child(odd)  {
+  background-color:  darkgrey;
+}
