@@ -1,0 +1,15 @@
+* {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-title,
+.add-author {
+  display: block;
+  margin-bottom: 5px;
+}
