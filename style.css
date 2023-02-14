@@ -26,7 +26,6 @@ body {
   font-weight: 600;
 }
 
-
 .book-container {
   width: 100%;
   display: flex;
@@ -50,7 +49,7 @@ body {
 .div-container {
   width: 90%;
   margin: 0 auto;
-  border: 1px solid ;
+  border: 1px solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,7 +61,7 @@ hr {
   width: 100%;
 }
 
-.list-container{
+.list-container {
   padding-inline-start: 0;
   width: 100%;
   display: flex;
@@ -71,7 +70,7 @@ hr {
 }
 
 .list-container:nth-child(odd) {
-  background-color:  darkgrey;
+  background-color: darkgray;
 }
 
 .list-item {

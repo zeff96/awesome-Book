@@ -1,7 +1,7 @@
 const bookContainer = document.querySelector('.book-container');
 const holder = document.createElement('div');
 
-holder.className = "div-container";
+holder.className = 'div-container';
 
 const addTitle = document.querySelector('.add-title');
 const addAuthor = document.querySelector('.add-author');
@@ -21,7 +21,7 @@ if (Array.isArray(savedBooks)) {
 }
 
 class Book {
-  constructor(title, author, id = '' + new Date().getTime()){
+  constructor(title, author, id = `${new Date().getTime()}`) {
     this.title = title;
     this.author = author;
     this.id = id;
@@ -29,8 +29,8 @@ class Book {
 }
 
 const createBooks = (title, author) => {
- const myBooks = new Book(title, author);
- books.push(myBooks);
+  const myBooks = new Book(title, author);
+  books.push(myBooks);
 
   saveBooks();
 };
@@ -47,12 +47,12 @@ const render = () => {
   books.forEach((book) => {
     const listItem = document.createElement('div');
     listItem.id = book.id;
-    listItem.className = 'list-item'
+    listItem.className = 'list-item';
 
     const title = document.createElement('p');
     title.innerHTML = `"${book.title}"`;
     const by = document.createElement('p');
-    by.innerText = "by"
+    by.innerText = 'by';
     const author = document.createElement('p');
     author.innerHTML = book.author;
 
@@ -65,19 +65,19 @@ const render = () => {
     };
 
     const buttonContainer = document.createElement('div');
-    buttonContainer.className = 'btn-container'
+    buttonContainer.className = 'btn-container';
 
     const deleteButton = document.createElement('button');
     deleteButton.innerHTML = 'remove';
-    deleteButton.className = 'btn'
+    deleteButton.className = 'btn';
     deleteButton.setAttribute('id', book.id);
     deleteButton.onclick = removeBooks;
 
     const list = document.createElement('div');
-    list.className = "list-container";
+    list.className = 'list-container';
 
-    listItem.append(title, by ,author,);
-    buttonContainer.appendChild(deleteButton)
+    listItem.append(title, by, author);
+    buttonContainer.appendChild(deleteButton);
     list.append(listItem, buttonContainer);
     holder.appendChild(list);
   });
