@@ -1,7 +1,27 @@
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
+
 # Awesome-books-Project
 Basic website that allows users to add/remove books from a list. 
-
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
 > Awesome-Books Web site.
 ## Awesome-Books Web site Project initialization
@@ -9,7 +29,7 @@ Basic website that allows users to add/remove books from a list.
 
 ## Live Demo:
 
-[Live Demo Link]()
+[Live Demo Link](https://zeff96.github.io/awesome-book.github.io/?)
 
  ## Built With
 

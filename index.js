@@ -30,12 +30,7 @@ const createBooks = (title, author) => {
 };
 
 const deleteBooks = (idToDelete) => {
-  books = books.filter((book) => {
-    if (book.id === idToDelete) {
-      return false;
-    }
-    return true;
-  });
+  books = books.filter((book) => book.id !== idToDelete);
 
   saveBooks();
 };
@@ -82,8 +77,8 @@ const addBooks = () => {
   render();
 };
 
-window.onload = render();
-
 bookContainer.appendChild(holder);
 
 button.addEventListener('click', addBooks);
+
+window.onload = render();
