@@ -27,12 +27,8 @@ class Book {
 }
 
 const createBooks = (title, author) => {
-  const id = `${new Date().getTime()}`;
-  books.push({
-    title,
-    author,
-    id,
-  });
+ const myBooks = new Book(title, author);
+ books.push(myBooks);
 
   saveBooks();
 };
