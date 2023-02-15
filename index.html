@@ -8,21 +8,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="book-container">
-    <h1>
-      All awesome books
-    </h1>
-  </section>
-  <section class="add-book">
-    <form action="" class="form">
-      <h2>
-        Add a new book
-      </h2>
-      <input type="text" placeholder="Title" class="add-title" required>
-      <input type="text" placeholder="Author" class="add-author" required>
-      <input type="submit" value="Add" class="btn submit">
-    </form>
-  </section>
+  <header class="header">
+    <nav class="top-nav">
+        <h1 class="top-h1">Awesome books</h1>
+        <ul class="mylist">
+            <li class="list list-1"><a class="list-item live" data-id="list"href="#" >List</a></li>
+            <li class="list list-2"><a class="list-item" data-id="add"  href="#">Add new</a></li>
+            <li class="list"><a class="list-item" data-id="contact" href="#">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="our-date"></section>
+
+    <section class="section book-container active" id="list">
+      <h1>
+        All awesome books
+      </h1>
+    </section>
+    <section class="section add-book" id="add">
+      <form action="" class="form">
+        <h2>
+          Add a new book
+        </h2>
+        <input type="text" placeholder="Title" class="add-title" required autofocus>
+        <input type="text" placeholder="Author" class="add-author" required>
+        <input type="submit" value="Add" class="btn submit">
+      </form>
+    </section>
+  
+    <section class="section contact" id="contact">
+      <h2 class="heading">Contact information</h2>
+      <article>
+          <p>Do have any questions or you just want to say "Hello"? <br>
+              you can rech out to us!
+          </p>
+          <ul>
+              <li>Our E-mail: mail@mail.com</li>
+              <li>our Phone number: 00212345678</li>
+              <li>our address: street name, city, country</li>
+          </ul>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p class="footer-para">© All rights reserved.</p>
+  </footer>
   <script src="./index.js"></script>
 </body>
 </html>
