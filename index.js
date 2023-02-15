@@ -1,6 +1,5 @@
 const bookContainer = document.querySelector('.book-container');
 const holder = document.createElement('div');
-
 holder.className = 'div-container';
 
 const addTitle = document.querySelector('.add-title');
@@ -96,3 +95,45 @@ bookContainer.appendChild(holder);
 button.addEventListener('click', addBooks);
 
 window.onload = render();
+
+const dateContainer = document.querySelector('.our-date');
+
+const dateOrdinal = (num) => {
+  if(num == 31 || num == 21 || num == 1) return num + 'st';
+  else if(num == 23 || num == 3) return num + 'rd';
+  else if (num == 22 || num ==2) return num + 'nd';
+  else return num + 'th';
+}
+
+const addZero = (num) => {
+  return num = (num < 10)? '0' + num : num;
+}
+
+const showDate = () => {
+  let output;
+  let currentDate;
+  let currentTime;
+  let date = new Date();
+
+  let month = date.toLocaleString('default', {month: 'long'});
+  let day = dateOrdinal(date.getDate());
+  let year = date.getFullYear();
+
+  currentDate = `${month} ${day} ${year}`;
+
+  let h = addZero((date.getHours()) - 12);
+  let m = addZero(date.getMinutes());
+  let s = addZero(date.getSeconds());
+  let ampm;
+
+  (h <= 12)? ampm = 'pm' : ampm = 'am';
+
+  currentTime = `${h}:${m}:${s} ${ampm}`;
+
+
+  output = `${currentDate}, ${currentTime}`
+  dateContainer.innerHTML = output;
+}
+
+setInterval(showDate, 1000);
+
