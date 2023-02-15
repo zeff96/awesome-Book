@@ -195,3 +195,11 @@ footer {
 footer p {
   padding-left: 15px;
 } 
+
+.active {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

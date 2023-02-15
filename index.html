@@ -12,21 +12,21 @@
     <nav class="top-nav">
         <h1 class="top-h1">Awesome books</h1>
         <ul class="mylist">
-            <li class="list list-1"><a class="list-item" href="">List</a></li>
-            <li class="list list-2"><a class="list-item" href="">Add new</a></li>
-            <li class="list"><a class="list-item" href="">Contact</a></li>
+            <li class="list list-1"><a class="list-item" id="list" href="#" >List</a></li>
+            <li class="list list-2"><a class="list-item" id="add" href="#">Add new</a></li>
+            <li class="list"><a class="list-item" id="contact" href="#">Contact</a></li>
         </ul>
     </nav>
   </header>
 
   <div class="our-date"></div>
 
-  <section class="book-container">
+  <section class="book-container" id="list">
     <h1>
       All awesome books
     </h1>
   </section>
-  <section class="add-book">
+  <section class="add-book hide" id="add">
     <form action="" class="form">
       <h2>
         Add a new book
@@ -37,7 +37,7 @@
     </form>
   </section>
 
-  <section class="contact">
+  <section class="contact hide" id="contact">
     <h2 class="heading">Contact information</h2>
     <article>
         <p>Do have any questions or you just want to say "Hello"? <br>

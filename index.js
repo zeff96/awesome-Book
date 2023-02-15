@@ -96,6 +96,7 @@ button.addEventListener('click', addBooks);
 
 window.onload = render();
 
+// Date
 const dateContainer = document.querySelector('.our-date');
 
 const dateOrdinal = (num) => {
@@ -136,4 +137,6 @@ const showDate = () => {
 }
 
 setInterval(showDate, 1000);
+
+// Navigations
 
