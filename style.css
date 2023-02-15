@@ -4,17 +4,15 @@
   font-weight: 600;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
 .header {
   width: 100%;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 1rem;
+  background-color: #fff;
+  z-index: 2;
 }
 
 .top-nav {
@@ -22,7 +20,6 @@ body {
   justify-content: space-between;
   align-items: center;
   border: 2px solid black;
-  height: 4rem;
   width: 90%;
   border-radius: 10px;
   margin: 0 auto;
@@ -30,7 +27,7 @@ body {
 
 .top-h1 {
   margin-left: 10px;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .mylist {
@@ -44,8 +41,10 @@ body {
   padding-inline-start: 0;
 }
 
-.list:hover {
-  color: blue;
+.list-1,
+.list-2 {
+  border-right: 1px solid;
+  padding-right: 1rem;
 }
 
 .list-item {
@@ -53,14 +52,31 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.5s ease;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+.list-item:hover {
+  color: blue;
+}
+
+.live {
+  color: blue;
+}
+
+.main {
+  padding-top: 3rem;
 }
 
 .our-date {
-  position: absolute;
-  top: 20%;
+  position: fixed;
   right: 5%;
-  margin-bottom: 2rem;
+  top: 12%;
+  background-color: #fff;
+  z-index: 4;
 }
 
 .book-container {
@@ -69,19 +85,8 @@ body {
   text-align: center;
   flex-direction: column;
   justify-content: center;
-  position: relative;
   padding-bottom: 2.5rem;
   margin-top: 2rem;
-}
-
-.book-container::before {
-  content: '';
-  position: absolute;
-  width: 10rem;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  border: 1px solid;
 }
 
 .div-container {
@@ -106,16 +111,13 @@ body {
   background-color: darkgray;
 }
 
-.list-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-left: 1rem;
-}
-
 .add-book {
   width: 50%;
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .form {
@@ -154,10 +156,10 @@ body {
 }
 
 .contact {
-  display: none;
-  width: 50%;
-  margin: 1rem auto;
-  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .heading {
@@ -190,16 +192,18 @@ footer {
   left: 0;
   right: 0;
   bottom: 0.2%;
+  background-color: #fff;
+  z-index: 3;
 }
 
-footer p {
+.footer-para {
   padding-left: 15px;
-} 
+}
+
+.section {
+  display: none;
+}
 
 .active {
   display: block;
-}
-
-.hide {
-  display: none;
 }

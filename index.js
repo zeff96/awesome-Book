@@ -92,7 +92,13 @@ const addBooks = () => {
 
 bookContainer.appendChild(holder);
 
-button.addEventListener('click', addBooks);
+button.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  addBooks();
+  addTitle.value = '';
+  addAuthor.value = '';
+});
 
 window.onload = render();
 
@@ -100,43 +106,69 @@ window.onload = render();
 const dateContainer = document.querySelector('.our-date');
 
 const dateOrdinal = (num) => {
-  if(num == 31 || num == 21 || num == 1) return num + 'st';
-  else if(num == 23 || num == 3) return num + 'rd';
-  else if (num == 22 || num ==2) return num + 'nd';
-  else return num + 'th';
-}
+  if (num === 31 || num === 21 || num === 1) return `${num}st`;
+  if (num === 23 || num === 3) return `${num}rd`;
+  if (num === 22 || num === 2) return `${num}nd`;
+  return `${num}th`;
+};
 
-const addZero = (num) => {
-  return num = (num < 10)? '0' + num : num;
-}
+const addZero = (num) => ((num < 10) ? `0${num}` : num);
 
 const showDate = () => {
-  let output;
-  let currentDate;
-  let currentTime;
-  let date = new Date();
+  let output = '';
+  let currentDate = '';
+  let currentTime = '';
+  const date = new Date();
 
-  let month = date.toLocaleString('default', {month: 'long'});
-  let day = dateOrdinal(date.getDate());
-  let year = date.getFullYear();
+  const month = date.toLocaleString('default', { month: 'long' });
+  const day = dateOrdinal(date.getDate());
+  const year = date.getFullYear();
 
   currentDate = `${month} ${day} ${year}`;
 
-  let h = addZero((date.getHours()) - 12);
-  let m = addZero(date.getMinutes());
-  let s = addZero(date.getSeconds());
-  let ampm;
+  const h = addZero((date.getHours()) - 12);
+  const m = addZero(date.getMinutes());
+  const s = addZero(date.getSeconds());
+  let ampm = '';
 
-  (h <= 12)? ampm = 'pm' : ampm = 'am';
+  if (h <= 12) {
+    ampm = 'pm';
+  } else {
+    ampm = 'am';
+  }
 
   currentTime = `${h}:${m}:${s} ${ampm}`;
 
-
-  output = `${currentDate}, ${currentTime}`
+  output = `${currentDate}, ${currentTime}`;
   dateContainer.innerHTML = output;
-}
+};
 
 setInterval(showDate, 1000);
 
 // Navigations
 
+const sections = document.querySelectorAll('.section');
+const lists = document.querySelectorAll('.list');
+const links = document.querySelectorAll('.list-item');
+
+lists.forEach((list) => {
+  list.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const { id } = e.target.dataset;
+
+    if (id) {
+      links.forEach((link) => {
+        link.classList.remove('live');
+      });
+      e.target.classList.add('live');
+
+      sections.forEach((sec) => {
+        sec.classList.remove('active');
+      });
+
+      const elems = document.getElementById(id);
+      elems.classList.add('active');
+    }
+  });
+});
