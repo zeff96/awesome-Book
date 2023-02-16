@@ -49,9 +49,7 @@ const render = () => {
     listItem.className = 'list-item';
 
     const title = document.createElement('p');
-    title.innerHTML = `"${book.title}"`;
-    const by = document.createElement('p');
-    by.innerText = 'by';
+    title.innerHTML = `"${book.title}" by`;
     const author = document.createElement('p');
     author.innerHTML = book.author;
 
@@ -75,7 +73,7 @@ const render = () => {
     const list = document.createElement('div');
     list.className = 'list-container';
 
-    listItem.append(title, by, author);
+    listItem.append(title, author);
     buttonContainer.appendChild(deleteButton);
     list.append(listItem, buttonContainer);
     holder.appendChild(list);
